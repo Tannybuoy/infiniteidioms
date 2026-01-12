@@ -1,14 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "Unhinged Idioms",
-  "version": "2.0.0",
-  "description": "Everyday idioms in a new language - Learn colorful expressions from around the world",
+  "name": "Infinite Idioms",
+  "version": "3.0.0",
+  "description": "Discover endless idioms from languages around the world - powered by Google Gemini AI",
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
   "permissions": [
     "storage"
   ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",

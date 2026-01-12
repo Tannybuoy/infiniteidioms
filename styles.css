@@ -407,6 +407,64 @@ body {
   line-height: 1.6;
 }
 
+/* Setup Prompt */
+.setup-prompt {
+  text-align: center;
+  padding: 60px 24px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.setup-prompt.hidden {
+  display: none;
+}
+
+.setup-icon {
+  color: var(--primary);
+  margin-bottom: 24px;
+}
+
+.setup-prompt h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.setup-prompt p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.setup-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.setup-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.setup-hint {
+  font-size: 13px !important;
+  color: var(--text-tertiary) !important;
+  margin-top: 16px !important;
+  margin-bottom: 0 !important;
+}
+
 /* Toast */
 .toast {
   position: fixed;

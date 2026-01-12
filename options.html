@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Idioms Settings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 24px;
+      min-width: 400px;
+    }
+
+    .container {
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .subtitle {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #2dd4bf;
+      box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.1);
+    }
+
+    .help-text {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .help-text a {
+      color: #14b8a6;
+      text-decoration: none;
+    }
+
+    .help-text a:hover {
+      text-decoration: underline;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #2dd4bf;
+      color: white;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: #14b8a6;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #64748b;
+      border: 1px solid #e2e8f0;
+    }
+
+    .btn-secondary:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    .status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .status.success {
+      display: block;
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .status.error {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .toggle-visibility {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+      color: #64748b;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .divider {
+      height: 1px;
+      background: #e2e8f0;
+      margin: 24px 0;
+    }
+
+    .info-box {
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    .info-box h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #0f766e;
+    }
+
+    .info-box ol {
+      font-size: 13px;
+      color: #115e59;
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    .info-box a {
+      color: #0d9488;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <span>Infinite Idioms</span>
+      <span>Settings</span>
+    </h1>
+    <p class="subtitle">Configure your API key to enable unlimited idiom generation</p>
+
+    <div class="info-box">
+      <h3>How to get your free API key:</h3>
+      <ol>
+        <li>Visit <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></li>
+        <li>Sign in with your Google account</li>
+        <li>Click "Create API Key"</li>
+        <li>Copy the key and paste it below</li>
+      </ol>
+    </div>
+
+    <div class="form-group">
+      <label for="apiKey">Google Gemini API Key</label>
+      <div class="input-wrapper">
+        <input type="password" id="apiKey" placeholder="Enter your API key">
+        <button type="button" class="toggle-visibility" id="toggleVisibility">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+      </div>
+      <p class="help-text">
+        Your API key is stored locally and never sent anywhere except Google's API.
+        <a href="https://ai.google.dev/pricing" target="_blank">View pricing</a> (free tier includes 60 requests/minute).
+      </p>
+    </div>
+
+    <div class="button-group">
+      <button type="button" class="btn-primary" id="saveBtn">Save Settings</button>
+      <button type="button" class="btn-secondary" id="testBtn">Test Connection</button>
+    </div>
+
+    <div class="status" id="status"></div>
+
+    <div class="divider"></div>
+
+    <div class="form-group">
+      <label>Cache Settings</label>
+      <p class="help-text" style="margin-top: 0; margin-bottom: 12px;">
+        Idioms are cached locally to reduce API calls. You can clear the cache if you want fresh idioms.
+      </p>
+      <button type="button" class="btn-secondary" id="clearCacheBtn">Clear Idiom Cache</button>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
